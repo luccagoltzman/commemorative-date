@@ -6,8 +6,33 @@ Um projeto romântico para celebrar o Dia Internacional da Mulher com uma pessoa
 
 1. Faça o download ou clone este repositório
 2. **IMPORTANTE:** Salve a sua foto de casal com o nome `foto-casal.jpeg` na pasta raiz do projeto
-3. Personalize as mensagens no arquivo `index.html` se desejar
-4. Abra o arquivo `index.html` em qualquer navegador moderno
+3. **NOVO:** Adicione uma música romântica do Bruno Mars com o nome `musica.mp3` na pasta raiz
+4. Personalize as mensagens no arquivo `index.html` se desejar
+5. Abra o arquivo `index.html` em qualquer navegador moderno
+
+## Sobre a música
+
+Para adicionar a música romântica do Bruno Mars:
+
+1. Obtenha uma cópia legal da música (por exemplo, comprada no iTunes, Amazon Music, etc.)
+2. Converta a música para formato MP3 se necessário
+3. Renomeie o arquivo para `musica.mp3`
+4. Coloque o arquivo na mesma pasta onde estão os arquivos HTML, CSS e JS
+
+Sugestões de músicas românticas do Bruno Mars:
+- "Just The Way You Are"
+- "Marry You"
+- "Versace on the Floor"
+- "When I Was Your Man"
+- "It Will Rain"
+
+Se quiser usar um nome diferente para o arquivo de música, edite a linha no `index.html`:
+
+```html
+<source src="./musica.mp3" type="audio/mpeg">
+```
+
+Substitua `./musica.mp3` pelo caminho correto do seu arquivo.
 
 ## Sobre a foto
 
@@ -88,6 +113,7 @@ Este projeto usa:
 - CSS3 com animações
 - JavaScript puro
 - Fontes do Google (Dancing Script e Montserrat)
+- Reprodução de áudio
 
 ## Créditos
 

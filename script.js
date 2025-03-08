@@ -2,12 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const presentButton = document.getElementById('presentButton');
     const giftContainer = document.querySelector('.gift-container');
     const messageContainer = document.querySelector('.message-container');
+    const backgroundMusic = document.getElementById('background-music');
+    
+    // Configura o volume da música
+    backgroundMusic.volume = 0.6;
     
     // Posiciona os corações aleatoriamente
     positionHearts();
     
     // Adiciona efeito ao botão
     presentButton.addEventListener('click', () => {
+        // Inicia a reprodução da música
+        playBackgroundMusic();
+        
         // Adiciona animação de saída ao container do presente
         giftContainer.style.transform = 'scale(0.9)';
         giftContainer.style.opacity = '0';
@@ -25,6 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         }, 800);
     });
+    
+    // Função para reproduzir a música de fundo
+    function playBackgroundMusic() {
+        // Os navegadores modernos têm políticas que exigem interação do usuário para reproduzir áudio
+        // Como o botão foi clicado, podemos iniciar a reprodução
+        backgroundMusic.play().catch(error => {
+            console.log('Não foi possível reproduzir a música:', error);
+        });
+    }
     
     // Função para posicionar os corações aleatoriamente
     function positionHearts() {
