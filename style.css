@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffcce0, #ffd9e6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    position: relative;
+}
+
+.gift-container, .message-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #e85f99;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #e85f99;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+button {
+    background: linear-gradient(to right, #ff7eb3, #e85f99);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(232, 95, 153, 0.4);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    outline: none;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 95, 153, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    pointer-events: all;
+}
+
+.photo-frame {
+    width: 80%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.5s ease;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.photo-frame img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+.message {
+    padding: 20px 0;
+    width: 100%;
+}
+
+.message p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #e85f99;
+}
+
+/* Corações flutuantes */
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(232, 95, 153, 0.2);
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: float 6s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(232, 95, 153, 0.2);
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -15px;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 1.5s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-delay: 3s;
+    animation-duration: 5s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-delay: 4.5s;
+    animation-duration: 8s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+    animation-duration: 6.5s;
+}
+
+.heart:nth-child(6) {
+    left: 20%;
+    animation-delay: 0.5s;
+    animation-duration: 7.5s;
+}
+
+.heart:nth-child(7) {
+    left: 60%;
+    animation-delay: 3.5s;
+    animation-duration: 5.5s;
+}
+
+.heart:nth-child(8) {
+    left: 80%;
+    animation-delay: 1s;
+    animation-duration: 6s;
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(45deg) translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotate(45deg) translateY(-800px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .gift-container, .message-container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .photo-frame {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .photo-frame img {
+        max-height: 300px;
+    }
+    
+    .message-container {
+        max-height: 85vh;
+    }
+}
+
+/* Animação de entrada */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gift-container {
+    animation: fadeInScale 1s ease-out;
+} 
